@@ -3,9 +3,18 @@ class Pizzeria {
     private pizzasInOrder = [];
     private maxPizzasInOven = 10;
     protected recipes = [];
+    private _manager = "Jan Kowalski";
 
     constructor(name) {
         this.name = name;
+    }
+
+    get manager() {
+        return this._manager;
+    }
+
+    set manager(manager) {
+        this._manager = manager;
     }
 
     order(pizza) {
@@ -18,4 +27,6 @@ class Pizzeria {
 }
 
 const laStrada = new Pizzeria("LaStrada");
-laStrada.order("Hawajska");
+laStrada.order("Havanian Pizza");
+laStrada.manager;
+laStrada.manager = "Jolanta Nowak";
