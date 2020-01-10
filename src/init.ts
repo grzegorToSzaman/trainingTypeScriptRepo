@@ -6,3 +6,5 @@ const laStrada = new PolishPizzeria("LaStrada", true);
 const venezia = new PolishPizzeria("Venezia", false);
 
 console.log(americanHouse);
+console.log(laStrada);
+console.log(venezia);
