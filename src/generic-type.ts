@@ -2,7 +2,12 @@ interface Item {
     name: string
 }
 
-class Queue<T extends Item> {
+interface ProductsQueue<T> {
+    push(item: T): void;
+    getAll(): T[];
+}
+
+class Queue<T extends Item> implements ProductsQueue<T>{
     private data: T[] = [];
 
     push(item: T) {
@@ -11,6 +16,10 @@ class Queue<T extends Item> {
 
     pop() {
         this.data.shift();
+    }
+
+    getAll() {
+        return this.data
     }
 }
 
