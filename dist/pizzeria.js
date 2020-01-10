@@ -18,6 +18,9 @@ class Pizzeria {
     order(pizza) {
         this.pizzasInOrder.push(pizza);
     }
+    changeStatus(index, status) {
+        this.pizzasInOrder[index].status = status;
+    }
     isOvenFull() {
         return this.pizzasInOrder.length > this.maxPizzasInOven;
     }
