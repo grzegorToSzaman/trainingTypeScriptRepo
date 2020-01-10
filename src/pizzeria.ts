@@ -1,18 +1,21 @@
-export abstract class Pizzeria {
+import { Orderable } from "./orderable";
+import { Pizza } from "./pizza-model";
+
+export abstract class Pizzeria implements Orderable {
     name: string;
-    static id: number = 0;
+    static id = 0;
     public id: number;
-    private pizzasInOrder: string[] = [];
-    private maxPizzasInOven: number = 10;
+    pizzasInOrder: Pizza[] = [];
+    private maxPizzasInOven = 10;
     protected recipes: string[] = [];
-    private _manager: string = "Jan Kowalski";
+    private _manager = "Jan Kowalski";
 
     constructor(name: string) {
         this.id = Pizzeria.id++;
         this.name = name;
     }
 
-    get manager(): string {
+    get manager() {
         return this._manager;
     }
 
@@ -20,11 +23,11 @@ export abstract class Pizzeria {
         this._manager = manager;
     }
 
-    order(pizza: string): void {
+    order(pizza: Pizza) {
         this.pizzasInOrder.push(pizza);
     }
 
-    private isOvenFull(): boolean {
+    private isOvenFull() {
         return this.pizzasInOrder.length > this.maxPizzasInOven;
     }
 
