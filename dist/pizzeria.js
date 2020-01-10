@@ -21,6 +21,9 @@ class Pizzeria {
     changeStatus(index, status) {
         this.pizzasInOrder[index].status = status;
     }
+    changeSize(index, size) {
+        this.pizzasInOrder[index].size = size;
+    }
     isOvenFull() {
         return this.pizzasInOrder.length > this.maxPizzasInOven;
     }

@@ -1,5 +1,5 @@
 import { Orderable } from "./orderable";
-import {Pizza, Status} from "./pizza-model";
+import {Pizza, SizeKey, Status} from "./pizza-model";
 
 export abstract class Pizzeria implements Orderable {
     name: string;
@@ -29,6 +29,10 @@ export abstract class Pizzeria implements Orderable {
 
     changeStatus(index: number, status: Status) {
         this.pizzasInOrder[index].status = status;
+    }
+
+    changeSize(index: number, size: SizeKey) {
+        this.pizzasInOrder[index].size = size;
     }
 
     isOvenFull() {

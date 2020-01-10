@@ -1,6 +1,6 @@
 export interface Pizza {
     name: string;
-    price: number;
+    price: number | string;
     size: string;
     status: Status;
 }
@@ -16,3 +16,5 @@ export enum Size {
     medium = "medium",
     large = "large"
 }
+
+export type SizeKey = keyof typeof Size;

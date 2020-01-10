@@ -6,6 +6,9 @@ class PolishPizzeria extends pizzeria_1.Pizzeria {
         super(name);
         this.isOpenAtNight = isOpenAtNight;
     }
+    order(pizza) {
+        this.pizzasInOrder.push(pizza);
+    }
     bake() {
         return "pizza is being baked";
     }
