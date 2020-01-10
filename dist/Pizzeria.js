@@ -1,6 +1,7 @@
-class Pizzeria {
-    constructor(name) {
+var Pizzeria = /** @class */ (function () {
+    function Pizzeria(name) {
         this.name = name;
     }
-}
-const LaStrada = new Pizzeria("LaStrada");
+    return Pizzeria;
+}());
+var LaStrada = new Pizzeria("LaStrada");
