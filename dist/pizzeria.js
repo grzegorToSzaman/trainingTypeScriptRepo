@@ -24,6 +24,14 @@ class Pizzeria {
     changeSize(index, size) {
         this.pizzasInOrder[index].size = size;
     }
+    checkPrice({ price }) {
+        if (typeof price === "string") {
+            console.log("price is string", price.toLocaleLowerCase());
+        }
+        else {
+            console.log("price is number", price.toFixed(2));
+        }
+    }
     isOvenFull() {
         return this.pizzasInOrder.length > this.maxPizzasInOven;
     }

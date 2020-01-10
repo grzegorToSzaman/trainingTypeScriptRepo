@@ -35,6 +35,14 @@ export abstract class Pizzeria implements Orderable {
         this.pizzasInOrder[index].size = size;
     }
 
+    checkPrice({ price }: Pizza) {
+        if (typeof price === "string") {
+            console.log("price is string", price.toLocaleLowerCase())
+        } else {
+            console.log("price is number", price.toFixed(2))
+        }
+    }
+
     isOvenFull() {
         return this.pizzasInOrder.length > this.maxPizzasInOven;
     }
