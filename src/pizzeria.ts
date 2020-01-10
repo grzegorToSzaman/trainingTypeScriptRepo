@@ -1,5 +1,5 @@
 import { Orderable } from "./orderable";
-import {Pizza, SizeKey, Status} from "./pizza-model";
+import {PaymentMethod, Pizza, SizeKey, Status} from "./pizza-model";
 
 export abstract class Pizzeria implements Orderable {
     name: string;
@@ -40,6 +40,14 @@ export abstract class Pizzeria implements Orderable {
             console.log("price is string", price.toLocaleLowerCase())
         } else {
             console.log("price is number", price.toFixed(2))
+        }
+    }
+
+    getPaymentMethod(payment: PaymentMethod) {
+        switch (payment.type) {
+            case "cash": return `Paid in cash in ${payment.currency}`;
+            case "debitCard": return `Paid with debit card with code ${payment.code}`;
+            case "onlinePayment": return `Paid online wth bank account ${payment.bankAccount}`
         }
     }
 

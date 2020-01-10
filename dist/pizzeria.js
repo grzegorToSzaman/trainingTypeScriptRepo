@@ -32,6 +32,13 @@ class Pizzeria {
             console.log("price is number", price.toFixed(2));
         }
     }
+    getPaymentMethod(payment) {
+        switch (payment.type) {
+            case "cash": return `Paid in cash in ${payment.currency}`;
+            case "debitCard": return `Paid with debit card with code ${payment.code}`;
+            case "onlinePayment": return `Paid online wth bank account ${payment.bankAccount}`;
+        }
+    }
     isOvenFull() {
         return this.pizzasInOrder.length > this.maxPizzasInOven;
     }
